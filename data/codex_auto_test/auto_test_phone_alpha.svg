@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#f7fafc"/>
+  <rect x="170" y="32" width="140" height="256" rx="24" fill="#1f2937"/>
+  <rect x="184" y="52" width="112" height="216" rx="12" fill="#2563eb"/>
+  <circle cx="276" cy="78" r="10" fill="#111827"/>
+  <circle cx="252" cy="78" r="10" fill="#111827"/>
+  <circle cx="276" cy="102" r="10" fill="#111827"/>
+  <text x="240" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">AUTO</text>
+  <text x="240" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">Phone Alpha</text>
+  <text x="240" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#dbeafe">NebulaBlue</text>
+</svg>
+

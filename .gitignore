@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data (runtime generated)
+.chroma_db/
+data/memory/
+data/user_memory/
+data/conversations/
+data/md5.text
+data/sessions.db
+*.jsonl
+data/codex_auto_test/results/*
+!data/codex_auto_test/results/.gitkeep
+
+# Env
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+
+# Logs
+*.log
+
+# Claude IDE
+.claude/
+.hermes/
+
+# Local automation artifacts
+.superpowers/
+.playwright-cli/

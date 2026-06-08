@@ -1,0 +1,25 @@
+# AUTO RERUN Phone Beta 产品资料
+
+本轮测试唯一标识：AUTO_RERUN_20260608_BETA
+
+产品名：AUTO RERUN Phone Beta
+
+核心定位：
+AUTO RERUN Phone Beta 是本轮 Codex 重测专用的长续航性能机型，建议零售价 3999 元。
+
+关键规格：
+- 散热：Rerun IceBridge 石墨烯散热系统。
+- 电池：6200mAh。
+- 充电：125W 有线快充，不支持无线充电。
+- 屏幕：6.78 英寸 1.5K OLED，最高 144Hz。
+- 影像：Rerun NightVision Pro，夜景解析力强，人像肤色偏冷。
+- 防护：IP64。
+
+推荐人群：
+- 重度使用、经常出差、需要长续航的用户。
+- 更关注散热和有线快充，而不是无线充电的用户。
+
+不推荐场景：
+- 必须要 IP68 或无线充电。
+- 对轻薄手感非常敏感。
+

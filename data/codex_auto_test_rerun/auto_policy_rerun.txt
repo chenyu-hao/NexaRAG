@@ -1,0 +1,22 @@
+# AUTO RERUN 售后政策资料
+
+本轮测试唯一标识：AUTO_RERUN_20260608_POLICY
+
+## AUTO_RERUN_POLICY_7D
+
+AUTO RERUN Phone 系列在官方渠道购买后，符合二次销售条件时支持 7 天无理由退货。
+
+## AUTO_RERUN_POLICY_15D
+
+购买 15 天内出现非人为性能故障，经官方检测确认后，可以申请换货。
+
+## AUTO_RERUN_POLICY_WATER_DAMAGE
+
+进液、跌落、私拆、非官方维修造成的损坏，不属于免费保修范围。
+即使产品具备 IP68 或 IP64 防护能力，液体损坏仍需要以官方检测结果为准。
+
+## AUTO_RERUN_POLICY_BATTERY
+
+电池和充电模块的标准保修期为 12 个月。
+如果检测结果显示电池健康异常且不属于人为损坏，可按保修政策处理。
+

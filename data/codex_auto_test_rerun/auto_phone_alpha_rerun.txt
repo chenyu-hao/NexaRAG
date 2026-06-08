@@ -1,0 +1,26 @@
+# AUTO RERUN Phone Alpha 产品资料
+
+本轮测试唯一标识：AUTO_RERUN_20260608_ALPHA
+
+产品名：AUTO RERUN Phone Alpha
+
+核心定位：
+AUTO RERUN Phone Alpha 是本轮 Codex 重测专用的轻薄拍照机型，建议零售价 4399 元。
+
+关键规格：
+- 颜色：RerunBlue 复测蓝。
+- 芯片：AURORA-RERUN-NPU，标称 45 TOPS。
+- 电池：5180mAh。
+- 充电：88W 有线快充，55W 无线充电。
+- 屏幕：6.72 英寸 1.5K LTPO，最高 120Hz。
+- 影像：RerunCam 5000 万像素主摄，支持夜景人像。
+- 防护：IP68。
+
+推荐人群：
+- 预算 4000 到 4600 元。
+- 喜欢轻薄、拍照、无线充电和 IP68 防护的用户。
+
+不推荐场景：
+- 长时间重度游戏。
+- 必须 6000mAh 以上超大电池。
+

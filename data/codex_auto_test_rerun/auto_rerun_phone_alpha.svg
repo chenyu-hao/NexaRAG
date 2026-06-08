@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#f8fafc"/>
+  <rect x="170" y="32" width="140" height="256" rx="24" fill="#0f172a"/>
+  <rect x="184" y="52" width="112" height="216" rx="12" fill="#0284c7"/>
+  <circle cx="276" cy="78" r="10" fill="#020617"/>
+  <circle cx="252" cy="78" r="10" fill="#020617"/>
+  <circle cx="276" cy="102" r="10" fill="#020617"/>
+  <text x="240" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">AUTO RERUN</text>
+  <text x="240" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">Phone Alpha</text>
+  <text x="240" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e0f2fe">RerunBlue</text>
+</svg>
+
