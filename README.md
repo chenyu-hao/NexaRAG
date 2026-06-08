@@ -1,24 +1,20 @@
-# NexaRAG — 3C 数码智能客服系统 v2.7
+# NexaRAG — 3C 数码智能客服系统
 
-基于 ReAct 风格工具调用 + 多模态视觉理解的 RAG 智能问答系统，面向 3C 数码产品客服场景。系统支持产品咨询、故障排查、购买推荐、竞品对比、闲聊分流、图片问答、会话记忆、长期用户画像和知识库上传。
+**技术栈：**FastAPI、React、DashScope Qwen、LLM Tool Calling、Agent Loop、LangGraph、ChromaDB、BM25、RRF、JSONL Trace、pytest
+
+**项目描述：**面向 3C 数码产品客服场景构建 RAG 智能问答系统，支持产品咨询、故障排查、购买推荐、竞品对比、闲聊分流和图片问答。项目以“数码客服知识问答”为业务场景，底层拆分出可复用的 Agent 编排、工具调用、知识库检索、会话记忆、上下文压缩和运行追踪能力，将 API 接入、模型调用、工具执行、Prompt 组装、检索召回、记忆注入和结果校验解耦，提升 AI 客服应用的可解释性、稳定性和可测试性。
 
 当前默认运行入口为 `main.py` 中挂载的 `CustomerServiceAgentGroup` 顺序节点编排；仓库同时保留 `agent/graph.py` 的 LangGraph `StateGraph` 实现，用于测试和后续图编排演进。
 
-## v2.7 关键特性
+## 核心亮点
 
 | 特性 | 说明 |
 | --- | --- |
-| ReAct 风格工具推理 | `ToolReasoningNode` 让 LLM 自主决定是否调用知识检索、商品规格、竞品对比、故障排查等工具，最多 5 轮 |
-| 多模态视觉理解 | 图片接口将上传图片转为 base64 data URI，再由 `VisionAnalyzer` 调用 Qwen3-VL 识别产品、故障截图和图片语义 |
-| 全链路异步化 | API、Agent 节点、LLM 调用和流式输出均采用 async/await |
-| 真实流式输出 | `AnswerGenerationNode.stream()` 调用 streaming LLM 逐 token 输出，并在末尾追加 `__CA_META__` 元数据 |
-| FastAPI 依赖注入 | `app.state` 统一挂载 `ChatService`、`KnowledgeBase`、`ConversationRegistry`、`MemoryService`、`MemoryCompactor` |
-| LLM 实例复用 | `llm`、`light_llm`、`react_llm` 三个共享 ChatTongyi 实例覆盖生成、轻量分类/验证和工具推理 |
-| 混合检索 | ChromaDB 向量检索 + BM25(jieba) + RRF 融合，支持知识库同步和工具化查询 |
-| 三层记忆 | SQLite 会话历史、JSONL 节点事件、每日 Markdown、长期 `memory.md` 和用户画像 JSON |
-| 工作台前端 | React 19 + Vite 6 + TypeScript + Tailwind CSS，提供聊天、会话、诊断、知识库管理等工作台能力 |
-| 健康检查 + 请求追踪 | `/health` 端点返回 BM25 文档数和活跃会话数；中间件注入 `X-Request-ID` |
-| pytest 测试体系 | 当前收集 110 个测试用例，覆盖配置、RAG、记忆、API、Agent 节点、工具、视觉、前端关键页面 |
+| 知识库上传全链路 | `POST /knowledge/upload` 和 `scripts/import_knowledge.py` 支持 TXT 知识导入；后端完成文件读取、空内容校验、MD5 去重、长文分块、DashScope embedding 编码、ChromaDB 向量写入，并在上传后同步 BM25 索引，形成从文件到可检索知识库的完整闭环 |
+| RAG 混合检索 | `KnowledgeBase` 统一封装入库和检索；`KnowledgeRetriever` 组合 Chroma 向量语义检索、BM25 关键词检索和 RRF 融合召回，并通过工具层暴露 `search_knowledge`、`search_product_knowledge`、`search_troubleshoot_docs` 等能力，让 Agent 能按意图自主检索证据 |
+| Agent 编排与工具调用 | 默认使用 `CustomerServiceAgentGroup` 串联 Vision、Intent、QueryRewrite、ToolReasoning、Answer、Verification 六类节点；`ToolReasoningNode` 基于 LLM Tool Calling 实现多轮工具调用与观察结果回写，仓库同时保留 `agent/graph.py` 的 LangGraph `StateGraph` 版本，支持条件分流和验证失败 retry 的图式编排 |
+| 三层记忆系统 | 系统同时维护短期会话记忆、每日 Markdown 记忆和长期稳定记忆；`ConversationMemory` 管理窗口上下文与摘要，`SessionRecorder` 写入 JSONL 节点事件，`DailyMemory` 记录会话快照，`StableMemory` 和 `LongTermMemory` 分别支撑 prompt 注入与用户画像 API |
+| 上下文压缩 | `MemoryCompactor` 在长会话中保留头部和尾部关键轮次，将中间历史压缩为任务摘要，并把大工具结果替换成可追踪 placeholder；`/api/context/compact` 可主动触发压缩和每日快照，降低 prompt 噪声和上下文长度风险 |
 
 ## 系统架构
 
